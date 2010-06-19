@@ -29,5 +29,6 @@ Using OhEmbed is super easy below is an example for getting OEmbed data for a vi
 * Revision 3
 * Viddler
 * Hulu
+* Mobypicture
 
 If you would like a provider to be added just open a GitHub ticket.
