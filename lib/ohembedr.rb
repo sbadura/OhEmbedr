@@ -40,13 +40,14 @@ module OhEmbedr
   # Wrapping in a <em>begin rescue</em> block allows us to pass any url to OhEmbedr if an UnsupportedError exception is raised then we know the url is not supported and can continue
   class OhEmbedr
     # The providers supported by default in this class
-    @@default_providers = {"youtube.com"    => {:base => "http://www.youtube.com/oembed",           :dot_format => false}, 
-                           "vimeo.com"      => {:base => "http://vimeo.com/api/oembed",             :dot_format => true }, 
-                           "flickr.com"     => {:base => "http://www.flickr.com/services/oembed",   :dot_format => false}, 
-                           "qik.com"        => {:base => "http://qik.com/api/oembed",               :dot_format => true }, 
-                           "revision3.com"  => {:base => "http://revision3.com/api/oembed",         :dot_format => false},
-                           "viddler.com"    => {:base => "http://lab.viddler.com/services/oembed",  :dot_format => false},
-                           "hulu.com"       => {:base => "http://www.hulu.com/api/oembed",          :dot_format => true}}
+    @@default_providers = {"youtube.com"      => {:base => "http://www.youtube.com/oembed",           :dot_format => false}, 
+                           "vimeo.com"        => {:base => "http://vimeo.com/api/oembed",             :dot_format => true }, 
+                           "flickr.com"       => {:base => "http://www.flickr.com/services/oembed",   :dot_format => false}, 
+                           "qik.com"          => {:base => "http://qik.com/api/oembed",               :dot_format => true }, 
+                           "revision3.com"    => {:base => "http://revision3.com/api/oembed",         :dot_format => false},
+                           "viddler.com"      => {:base => "http://lab.viddler.com/services/oembed",  :dot_format => false},
+                           "hulu.com"         => {:base => "http://www.hulu.com/api/oembed",          :dot_format => true},
+                           "mobypicture.com"  => {:base => "http://api.mobypicture.com/oembed",       :dot_format => false}}
         
     # A mapping of supported formats to the methods which parse them
     @@formats = {"xml"  => {:require => "xmlsimple", :oembed_parser => "parse_xml_oembed" }, 
