@@ -1,6 +1,6 @@
-  Gem::Specification.new do |s|
+Gem::Specification.new do |s|
   s.name = %q{ohembedr}
-  s.version = "0.1.2"
+  s.version = "0.1.3"
   s.date = %q{2009-10-17}
   s.authors = ["Ben McRedmond"]
   s.email = %q{ben+ohembedr@benmcredmond.com}

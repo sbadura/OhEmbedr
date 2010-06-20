@@ -47,7 +47,7 @@ module OhEmbedr
                            "revision3.com"    => {:base => "http://revision3.com/api/oembed",         :dot_format => false},
                            "viddler.com"      => {:base => "http://lab.viddler.com/services/oembed",  :dot_format => false},
                            "hulu.com"         => {:base => "http://www.hulu.com/api/oembed",          :dot_format => true},
-                           "mobypicture.com"  => {:base => "http://api.mobypicture.com/oembed",       :dot_format => false}}
+                           "mobypicture.com"  => {:base => "http://api.mobypicture.com/oEmbed",       :dot_format => false}}
         
     # A mapping of supported formats to the methods which parse them
     @@formats = {"xml"  => {:require => "xmlsimple", :oembed_parser => "parse_xml_oembed" }, 
