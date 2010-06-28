@@ -111,6 +111,8 @@ module OhEmbedr
         elsif e.message == "404"
           # Not found
           raise Error, "#{@url} not found"
+        else
+          raise e
         end
       end
     end
@@ -133,9 +135,22 @@ module OhEmbedr
       url
     end
     
-    def make_http_request      
-      response = Net::HTTP.get_response(URI.parse(@request_url))    
-      raise response.code if response.code != "200"      
+    def make_http_request
+      begin
+        proxy = URI.parse(ENV['HTTP_PROXY'])
+        proxy = [proxy.host, proxy.port]
+      rescue
+        proxy = [nil, nil]
+      end
+      
+      uri = URI.parse(@request_url)      
+      response = nil
+      
+      Net::HTTP::Proxy(proxy[0], proxy[1]).start(uri.host) do |h|   
+        response = h.get(uri.request_uri)
+      end
+      
+      raise response.code if response.code != "200"
       return response.body      
     end
     

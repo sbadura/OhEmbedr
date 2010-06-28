@@ -1,7 +1,7 @@
 require 'lib/ohembedr.rb'
 require 'test/unit'
 
-class OhEmbedrTest < Test::Unit::TestCase
+class OhEmbedrTest < Test::Unit::TestCase  
   def test_url_required
     assert_raise(ArgumentError) {OhEmbedr::OhEmbedr.new()}
   end
