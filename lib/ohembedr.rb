@@ -147,7 +147,7 @@ module OhEmbedr
       response = nil
       
       Net::HTTP::Proxy(proxy[0], proxy[1]).start(uri.host) do |h|   
-        response = h.get(uri.request_uri)
+        response = h.get(uri.request_urigem)
       end
       
       raise response.code if response.code != "200"
